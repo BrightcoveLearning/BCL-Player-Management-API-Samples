@@ -34,7 +34,7 @@
         <p>
             Version to update to:
             <select name="version" id="version">
-                <option>5.0.8</option>
+                <option selected="selected">5.0.8</option>
                 <option>5.0.7</option>
                 <option>1.14.30</option>
                 <option>1.14.29</option>
@@ -68,7 +68,7 @@
             account_id = document.getElementById('account_id'),
             player_id = document.getElementById('player_id'),
             submit = document.getElementById('submit'),
-            response = document.getElementById('response')
+            response = document.getElementById('response'),
             publishRadios = document.getElementsByName('publish'),
             skinRadios = document.getElementsByName('skin'),
             playerLink = document.getElementById('playerLink'),
@@ -86,7 +86,7 @@
             */
             function updatePlayer() {
             var httpRequest = new XMLHttpRequest(),
-            proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/update-player-skin-proxy.php',
+            proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/update-player-version-proxy.php',
             i,
             responseRaw,
             parsedData,
@@ -116,8 +116,8 @@
                   }
                 }
             }
-
-            requestParams = 'username=' + username.value + '&password=' + password.value + '&account_id=' + account_id.value + '&player_id=' + player_id.value + '&publish=' + publish + '&skin=' + skin;
+            playerVersion = version.options[version.selectedIndex].value;
+            requestParams = 'username=' + username.value + '&password=' + password.value + '&account_id=' + account_id.value + '&player_id=' + player_id.value + '&publish=' + publish + '&skin=' + skin + '&version=' + playerVersion;
             console.log(requestParams);
 
             // set response handler
