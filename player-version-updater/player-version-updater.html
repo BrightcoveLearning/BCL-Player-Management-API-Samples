@@ -34,18 +34,21 @@
         <p>
             Version to update to:
             <select name="version" id="version">
-                <option selected="selected">5.0.8</option>
-                <option>5.0.7</option>
-                <option>1.14.30</option>
-                <option>1.14.29</option>
+                <option value="5-0-8" selected="selected">5.0.8</option>
+                <option value="5-0-7">5.0.7</option>
+                <option value="1-14-30">1.14.30</option>
+                <option value="1-14-29">1.14.29</option>
             </select>
+        </p>
+        <p>
+            Or enter a version: <input type="text" id="versionText" placeholder="5.0.8"> (note that if the version does not exist, the update will fail!)
         </p>
         <p>
           Which skin? If this is a 1.x player, you may want to keep the 1.x skin for compatibility with customizations you made; you can update it later using the <a href="//docs.brightcove.com/en/video-cloud/brightcove-player/samples/player-skin-updater.html#app">skin updater</a>.
           <br />
-          <input type="radio" name="skin" value="graphite" checked> Use 1.x skin (graphite)
+          <input type="radio" name="skin" value="graphite"> Use 1.x skin (graphite)
           <br />
-          <input type="radio" name="skin" value="luna"> Use 5.x skin (luna)
+          <input type="radio" name="skin" value="luna" checked> Use 5.x skin (luna) (<span style="color:#990000">will <strong>NOT</strong> be applied to 1.x.x versions!</span>)
           <br />
         </p>
         <p>
